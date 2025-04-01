@@ -437,26 +437,51 @@
 
 
 //Abstraction
+//using System;
+//namespace abstraction
+//{
+//    abstract class Person
+//    {
+//        public abstract void name();
+//    }
+//    class details : Person
+//    {
+//        public override void name()
+//        {
+//            Console.WriteLine("Hello");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            details d = new details();
+//            d.name();
+//        }
+//    }
+//}
+
+//Generics
 using System;
-namespace abstraction
+namespace generics
 {
-    abstract class Person
-    {
-        public abstract void name();
-    }
-    class details : Person
-    {
-        public override void name()
-        {
-            Console.WriteLine("Hello");
-        }
-    }
-    class Program
+    class Person
     {
         public static void Main(string[] args)
         {
-            details d = new details();
-            d.name();
+            Console.WriteLine("Enter the 1st Element : ");
+            var a = Console.ReadLine();
+            Console.WriteLine("Enter the 2nd Element : ");
+            var b = Console.ReadLine();
+            swap(ref a, ref b);
+            Console.WriteLine($"A: {a} and B: {b}");
+        }
+
+        public static void swap<T>(ref T a, ref T b)
+        {
+            var temp = a;
+            a = b;
+            b = temp;
         }
     }
 }

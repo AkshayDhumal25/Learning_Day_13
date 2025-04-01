@@ -23,6 +23,35 @@
 //}
 
 // find second largest element from the array;
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] array = { 1, 2, 4, 0, 3 };
+//            int secLarge = 0;
+//            int large = 0;
+//            for (int i = 0; i < array.Length; i++)
+//            {
+//                if (array[i] > large)
+//                {
+//                    secLarge = large;
+//                    large = array[i];
+//                }
+//                if (array[i] < large && array[i] > secLarge)
+//                {
+//                    secLarge = array[i];
+//                }
+//            }
+//            Console.WriteLine(secLarge);
+//        }
+//    }
+//}
+
+
+// 2. WAP to reverse an integer without converting it to a string, without using any built-in methods.
 using System;
 namespace logicals
 {
@@ -30,22 +59,15 @@ namespace logicals
     {
         public static void Main(string[] args)
         {
-            int[] array = { 1, 2, 4, 0, 3 };
-            int secLarge = 0;
-            int large = 0;
-            for (int i = 0; i < array.Length; i++)
+            int n = 123;
+            int reversed = 0;
+            while (n > 0)
             {
-                if (array[i] > large)
-                {
-                    secLarge = large;
-                    large = array[i];
-                }
-                if (array[i] < large && array[i] > secLarge)
-                {
-                    secLarge = array[i];
-                }
+                int reminder = n % 10;
+                reversed = reversed * 10 + reminder;
+                n = n / 10;
             }
-            Console.WriteLine(secLarge);
+            Console.WriteLine($"{reversed}");
         }
     }
 }

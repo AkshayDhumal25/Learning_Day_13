@@ -139,19 +139,40 @@
 //}
 
 // 4. Find the reverse of the string.
+//using System;
+//using System.Linq;
+//using System.Collections.Generic;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            string str = "Akshay";
+//            var reversed = str.Reverse().ToArray();
+//            reversed.ToString();
+//            Console.WriteLine(reversed);
+//        }
+//    }
+//}
+
+//Enum
 using System;
-using System.Linq;
-using System.Collections.Generic;
-namespace logicals
+namespace enums
 {
+
+    public enum shippingMethod
+    {
+        RegularAirMail = 1,
+        RegisteredAirMail = 2,
+        Express = 3
+    }
     class Program
     {
         public static void Main(string[] args)
         {
-            string str = "Akshay";
-            var reversed = str.Reverse().ToArray();
-            reversed.ToString();
-            Console.WriteLine(reversed);
+            var Method = shippingMethod.Express;
+            Console.WriteLine((int)Method);
         }
     }
 }

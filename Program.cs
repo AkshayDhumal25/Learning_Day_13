@@ -394,43 +394,69 @@
 
 
 //Encapsulation
+//using System;
+//namespace encapsulation
+//{
+//    class rectangleArea
+//    {
+//        private double length;
+//        private double width;
+
+//        public double Length
+//        {
+//            get { return length; }
+//            set { length = value; }
+//        }
+//        public double Width
+//        {
+//            get { return width; }
+//            set { width = value; }
+//        }
+//        public double getArea()
+//        {
+//            return length * width;
+//        }
+
+//        public void print()
+//        {
+//            Console.WriteLine($"Length : {length} and Width : {width}");
+//            Console.WriteLine("Area : " + getArea());
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            rectangleArea r = new rectangleArea();
+//            r.Length = 9.0;
+//            r.Width = 9.0;
+//            r.print();
+//        }
+//    }
+//}
+
+
+//Abstraction
 using System;
-namespace encapsulation
+namespace abstraction
 {
-    class rectangleArea
+    abstract class Person
     {
-        private double length;
-        private double width;
-
-        public double Length
+        public abstract void name();
+    }
+    class details : Person
+    {
+        public override void name()
         {
-            get { return length; }
-            set { length = value; }
-        }
-        public double Width
-        {
-            get { return width; }
-            set { width = value; }
-        }
-        public double getArea()
-        {
-            return length * width;
-        }
-
-        public void print()
-        {
-            Console.WriteLine($"Length : {length} and Width : {width}");
-            Console.WriteLine("Area : " + getArea());
+            Console.WriteLine("Hello");
         }
     }
     class Program
     {
         public static void Main(string[] args)
         {
-            rectangleArea r = new rectangleArea();
-            r.Length = 9.0;
-            r.Width = 9.0;
-            r.print();
+            details d = new details();
+            d.name();
         }
     }
 }

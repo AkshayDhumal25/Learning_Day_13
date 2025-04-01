@@ -227,15 +227,71 @@
 //}
 
 //Lambda Function
+//using System;
+//namespace lambdaFunction
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Func<int, int> square = x => x * x;
+//            Console.WriteLine(square(5));
+//        }
+//    }
+//}
+
+//Solution of the Diamond Problem
+//using System;
+//namespace diamondProblem
+//{
+//    interface IA
+//    {
+//        public void print()
+//        {
+//            Console.WriteLine("Interface IA");
+//        }
+//    }
+//    interface IB : IA { }
+//    interface IC : IA { }
+//    class D : IB, IC
+//    {
+//        public void print()
+//        {
+//            Console.WriteLine("Class D");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            D d = new D();
+//            d.print();
+//        }
+//    }
+//}
+
+
+// 5. WAP to find missing elements from the array?
 using System;
-namespace lambdaFunction
+using System.Collections.Generic;
+using System.Linq;
+namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            Func<int, int> square = x => x * x;
-            Console.WriteLine(square(5));
+            int[] array = { 1, 3, 4, 6, 7, 8, 9, 10 };
+            int max = array.Max();
+            int min = array.Min();
+            var list = new List<int>(array);
+            for (int i = min; i <= max; i++)
+            {
+                if (!list.Contains(i))
+                {
+                    Console.WriteLine(i + " ");
+                }
+            }
         }
     }
 }

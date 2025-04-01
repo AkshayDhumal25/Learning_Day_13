@@ -368,26 +368,69 @@
 // Logic for above problem?
 // What will be the complexity for it?
 // Any better solution for the above problem?
+//using System;
+//using System.Collections.Generic;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] array = { 80, 60, 10, 50, 30, 100, 0, 50 };
+//            int targetSum = 100;
+//            var list = new List<int>(array);
+//            for (int i = 0; i < array.Length; i++)
+//            {
+//                int complement = targetSum - array[i];
+//                if (list.Contains(complement))
+//                {
+//                    Console.WriteLine($"{complement} : {array[i]}");
+//                }
+
+//            }
+//        }
+//    }
+//}
+
+
+//Encapsulation
 using System;
-using System.Collections.Generic;
-namespace logicals
+namespace encapsulation
 {
+    class rectangleArea
+    {
+        private double length;
+        private double width;
+
+        public double Length
+        {
+            get { return length; }
+            set { length = value; }
+        }
+        public double Width
+        {
+            get { return width; }
+            set { width = value; }
+        }
+        public double getArea()
+        {
+            return length * width;
+        }
+
+        public void print()
+        {
+            Console.WriteLine($"Length : {length} and Width : {width}");
+            Console.WriteLine("Area : " + getArea());
+        }
+    }
     class Program
     {
         public static void Main(string[] args)
         {
-            int[] array = { 80, 60, 10, 50, 30, 100, 0, 50 };
-            int targetSum = 100;
-            var list = new List<int>(array);
-            for (int i = 0; i < array.Length; i++)
-            {
-                int complement = targetSum - array[i];
-                if (list.Contains(complement))
-                {
-                    Console.WriteLine($"{complement} : {array[i]}");
-                }
-
-            }
+            rectangleArea r = new rectangleArea();
+            r.Length = 9.0;
+            r.Width = 9.0;
+            r.print();
         }
     }
 }

@@ -157,22 +157,85 @@
 //}
 
 //Enum
-using System;
-namespace enums
-{
+//using System;
+//namespace enums
+//{
 
-    public enum shippingMethod
-    {
-        RegularAirMail = 1,
-        RegisteredAirMail = 2,
-        Express = 3
-    }
+//    public enum shippingMethod
+//    {
+//        RegularAirMail = 1,
+//        RegisteredAirMail = 2,
+//        Express = 3
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            var Method = shippingMethod.Express;
+//            Console.WriteLine((int)Method);
+//        }
+//    }
+//}
+
+//Encapsulation
+//using System;
+//using System.Linq;
+//namespace encapsulation
+//{
+//    class rectangleArea
+//    {
+//        private double length;
+//        private double width;
+
+//        public double Length
+//        {
+//            get { return length; }
+//            set
+//            {
+//                length = value;
+//            }
+//        }
+//        public double Width
+//        {
+//            get { return width; }
+//            set
+//            {
+//                width = value;
+//            }
+//        }
+//        public double getArea()
+//        {
+//            return length * width;
+//        }
+
+//        public void print()
+//        {
+//            Console.WriteLine($"Length : {length} and Width : {width} ");
+//            Console.WriteLine("Area : " + getArea());
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            rectangleArea r = new rectangleArea();
+//            r.Length = 9.0;
+//            r.Width = 9.0;
+//            r.print();
+//        }
+//    }
+//}
+
+//Lambda Function
+using System;
+namespace lambdaFunction
+{
     class Program
     {
         public static void Main(string[] args)
         {
-            var Method = shippingMethod.Express;
-            Console.WriteLine((int)Method);
+            Func<int, int> square = x => x * x;
+            Console.WriteLine(square(5));
         }
     }
 }

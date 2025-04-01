@@ -335,29 +335,59 @@
 //}
 
 // 7. WAP to print Fibonacci series with recursion.
+//using System;
+//namespace logicals
+//{
+//    class Progra
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Fibonacci Series with Recursion");
+//            Console.WriteLine("Enter the number to get the fibonacci series: ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            for (int i = 0; i < n; i++)
+//            {
+//                Console.WriteLine(fibo(i));
+//            }
+//        }
+//        public static int fibo(int n)
+//        {
+//            if (n <= 1)
+//            {
+//                return n;
+//            }
+
+//            return fibo(n - 1) + fibo(n - 2);
+//        }
+//    }
+//}
+
+
+// 14. [80, 60, 10, 50, 30, 100, 0, 50]
+// Find pairs whose sum = 100;
+// Logic for above problem?
+// What will be the complexity for it?
+// Any better solution for the above problem?
 using System;
+using System.Collections.Generic;
 namespace logicals
 {
-    class Progra
+    class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Fibonacci Series with Recursion");
-            Console.WriteLine("Enter the number to get the fibonacci series: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < n; i++)
+            int[] array = { 80, 60, 10, 50, 30, 100, 0, 50 };
+            int targetSum = 100;
+            var list = new List<int>(array);
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine(fibo(i));
-            }
-        }
-        public static int fibo(int n)
-        {
-            if (n <= 1)
-            {
-                return n;
-            }
+                int complement = targetSum - array[i];
+                if (list.Contains(complement))
+                {
+                    Console.WriteLine($"{complement} : {array[i]}");
+                }
 
-            return fibo(n - 1) + fibo(n - 2);
+            }
         }
     }
 }
